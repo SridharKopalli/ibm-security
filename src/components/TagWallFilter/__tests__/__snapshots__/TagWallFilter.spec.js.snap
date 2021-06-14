@@ -1664,13 +1664,11 @@ exports[`TagWallFilter tests FilterTagFragment should render the fragment 1`] = 
                                           className="security--filter"
                                           disabled={false}
                                           id="test-id"
-                                          innerRef={[Function]}
                                           type="default"
                                         >
                                           <div
                                             className="security--filter bx--list-box"
                                             id="test-id"
-                                            innerRef={[Function]}
                                             onClick={[Function]}
                                             onKeyDown={[Function]}
                                           >
@@ -4563,13 +4561,11 @@ exports[`TagWallFilter tests TagWallFilter should mount the TagWallFilter compon
                                             className="security--filter"
                                             disabled={false}
                                             id="test-id"
-                                            innerRef={[Function]}
                                             type="default"
                                           >
                                             <div
                                               className="security--filter bx--list-box"
                                               id="test-id"
-                                              innerRef={[Function]}
                                               onClick={[Function]}
                                               onKeyDown={[Function]}
                                             >

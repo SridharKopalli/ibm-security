@@ -190,7 +190,7 @@ class Filter extends Component {
           <ListBox
             className={namespace}
             disabled={disabled}
-            {...getRootProps({ refKey: 'innerRef' })}
+            {...getRootProps({ refKey: 'id' })}
             id={id}
           >
             <Field {...getButtonProps({ disabled, tabIndex: -1 })} id={id}>

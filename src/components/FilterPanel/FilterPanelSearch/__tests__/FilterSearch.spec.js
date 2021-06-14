@@ -3,7 +3,12 @@
  * @copyright IBM Security 2020 - 2021
  */
 
-import { act, render, wait } from '@testing-library/react';
+import {
+  act,
+  render,
+  wait,
+  waitFor as testingLibraryWaitFor,
+} from '@testing-library/react';
 import React from 'react';
 
 import renderWithinLandmark from '../../../../../config/jest/helpers/renderWithinLandmark';
@@ -12,6 +17,7 @@ import Checkbox from '../../../Checkbox';
 import FilterPanelSearch from '../FilterPanelSearch';
 
 const { name } = FilterPanelSearch;
+const waitFor = testingLibraryWaitFor || wait;
 
 describe(name, () => {
   test('should have no Axe or DAP violations', async () => {
@@ -57,7 +63,7 @@ describe(name, () => {
     searchInput.focus();
     searchInput.blur();
 
-    await wait(() =>
+    await waitFor(() =>
       expect(queryByTestId('result-content')).not.toBeInTheDocument()
     );
   });

@@ -1,6 +1,6 @@
 /**
  * @file Jest configuration.
- * @copyright IBM Security 2019 - 2020
+ * @copyright IBM Security 2019 - 2021
  */
 
 import '@testing-library/jest-dom/extend-expect';
@@ -24,3 +24,6 @@ Enzyme.configure({ adapter: new Adapter() });
 // For more information, check out the docs here:
 // https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array
 expect.extend({ toHaveNoAxeViolations, toHaveNoDAPViolations });
+
+const { getComputedStyle } = global;
+global.getComputedStyle = jest.fn(element => getComputedStyle(element));

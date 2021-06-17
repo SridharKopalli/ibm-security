@@ -1,6 +1,6 @@
 /**
  * @file Jest configuration.
- * @copyright IBM Security 2019 - 2020
+ * @copyright IBM Security 2019 - 2021
  */
 
 import '@testing-library/jest-dom/extend-expect';
@@ -9,6 +9,8 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import toHaveNoAxeViolations from './matchers/toHaveNoAxeViolations';
 import toHaveNoDAPViolations from './matchers/toHaveNoDAPViolations';
+
+const { mock, requireActual } = jest;
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -24,3 +26,11 @@ Enzyme.configure({ adapter: new Adapter() });
 // For more information, check out the docs here:
 // https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array
 expect.extend({ toHaveNoAxeViolations, toHaveNoDAPViolations });
+
+// https://stackoverflow.com/questions/58070996/how-to-fix-the-warning-uselayouteffect-does-nothing-on-the-server
+const React = requireActual('react');
+
+mock('react', () => ({
+  ...React,
+  useLayoutEffect: React.useEffect,
+}));

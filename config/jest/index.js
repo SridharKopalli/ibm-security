@@ -3,7 +3,7 @@
  * @copyright IBM Security 2019 - 2021
  */
 
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -34,3 +34,7 @@ mock('react', () => ({
   ...React,
   useLayoutEffect: React.useEffect,
 }));
+
+// https://github.com/nickcolley/jest-axe/issues/147
+const { getComputedStyle } = window;
+window.getComputedStyle = jest.fn(element => getComputedStyle(element));

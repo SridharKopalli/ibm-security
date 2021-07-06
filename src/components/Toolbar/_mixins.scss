@@ -199,14 +199,15 @@ $toolbar__panel__transition__timing-function: $timing-function;
   }
 
   &__nav__item__icon {
-    width: carbon--mini-units($count: 2.5);
-    height: carbon--mini-units($count: 2.5);
-    margin-left: -$carbon--spacing-07;
+    width: carbon--mini-units($count: 2);
+    height: carbon--mini-units($count: 2);
   }
 
   &__nav__item__title {
+    margin-left: $nav__icon__spacing;
+
     &--icon {
-      margin-left: $carbon--spacing-04;
+      margin-left: $nav__spacing;
     }
   }
 
